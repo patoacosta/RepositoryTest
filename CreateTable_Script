@@ -1,0 +1,40 @@
+
+CREATE DATABASE pelicula
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'C'
+    LC_CTYPE = 'C'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+--__________________________________________________________________
+
+CREATE TABLE public.m_pelicula
+(
+    id_pelicula integer NOT NULL,
+    nombre_pelicula character varying COLLATE pg_catalog."default",
+    imagen_pelicula character varying COLLATE pg_catalog."default",
+    duracion_pelicula integer,
+    clasificacion_pelicula "char",
+    status_pelicula boolean NOT null,
+    CONSTRAINT m_pelicula_pkey PRIMARY KEY (id_pelicula)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.m_pelicula
+    OWNER to postgres;
+
+--__________________________________________________________________
+
+
+CREATE SEQUENCE public.sec_pelicula
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 100
+    CACHE 1;
+
+ALTER SEQUENCE public.sec_pelicula
+    OWNER TO postgres;
