@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Project</title>
+</head>
+<body>
+<h2>
+  {{title}}
+</h2>
+<input placeholder="Nombre" [(ngModel)]="objeto.nombre"><br/>
+<input type="number" [(ngModel)]="objeto.edad"><br/>
+<button (click)="alerta()">Send Alert</button>
+
+<!-- Prueba componente de Ejemplo -->
+<ComponentEjemplo></ComponentEjemplo>
+<app-hola></app-hola>
+</body>

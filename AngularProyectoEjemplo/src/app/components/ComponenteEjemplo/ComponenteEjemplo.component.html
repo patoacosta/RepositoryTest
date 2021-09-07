@@ -1,0 +1,28 @@
+
+<h2>{{titulo}}</h2>
+<label id="lblText">{{label}}</label><br/>
+<input aria-label="Nombre: " [(ngModel)]="texto"><br/>
+<button type="button" (click)="alerta()">Alerta</button><br/>
+<h2>
+  Ejemplo de Modal
+</h2>
+<label>Presiona el boton para abrir Modal</label><br/>
+<button (click)="modal(mymodal)">Test Modal</button>
+
+
+<!--Ejemplo de Modal-->
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{titulo}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <input class="form-control me-2" type="text" placeholder="Nombre de Pelicula" [(ngModel)]="objeto.nombre"><br/>
+    <input class="form-control me-2" type="text" placeholder="Nombre de Pelicula" [(ngModel)]="objeto.edad" ><br/>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="alertaModal()">Guardar</button>
+  </div>
+</ng-template>
